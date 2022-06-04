@@ -11,6 +11,297 @@
 	padding:0;
 	box-sizing: border-box;
 }
+:root {
+    --red: #f32028;
+    --white: #fff;
+}
+
+::selection {
+    background: #f32028;
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6.5rem;
+    scroll-behavior: smooth;
+}
+
+.header-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    
+}
+
+.header-1 .logo {
+    font-size: 3rem;
+    
+    font-weight: bolder;
+}
+
+.header-1 .logo i {
+    color: #f32028;
+    padding: .5rem;
+}
+
+.header-1 .search-box-container {
+    display: flex;
+    height: 5rem;
+}
+
+.header-1 .search-box-container #search-box {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    color: #333;
+    font-size: 2rem;
+    text-transform: none;
+}
+
+.header-1 .search-box-container label {
+    width: 8rem;
+    height: 100%;
+    background-color: #f32028;
+    font-size: 2.5rem;
+    line-height: 5rem;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header-1 .search-box-container label:hover {
+    background-color: #000;
+}
+
+.header-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+    background-color: #f32028;
+    position: relative;
+}
+
+.header-2.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header-2 img{
+	width: 20px;
+}
+
+.header-2 .navbar a {
+    padding: .5rem 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: .5rem;
+}
+
+.header-2 .navbar a:hover {
+    color: #fff;
+    background-color: #f32028;
+}
+
+.header-2 .icons a {
+    font-size: 2.5rem;
+    color: #fff;
+    padding-left: 1rem;
+}
+
+.header-2 .icons a:hover {
+    color: #f32028;
+}
+
+#menu-bar {
+    font-size: 3rem;
+    
+    
+    padding: .8rem 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+#menu-bar img{
+	width: 30px;
+}
+.cards-list {
+              z-index: 0;
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              flex-wrap: wrap;
+        }
+
+        .card {
+            margin: 30px auto;
+            width: 300px;
+            
+            
+            color: black;
+            height: 280px;
+            
+            
+            box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        .card .card_image {
+            width: inherit;
+            height: 200px;
+            border-radius: 40px;
+        }
+        .card .card_image img {
+          width: inherit;
+          height: inherit;
+		  padding: 20px;
+          background-color: white;
+          border-top-left-radius: 40px;
+          border-top-right-radius: 40px;
+          object-fit: cover;
+        }
+        .card .card_title {
+          text-align: center;
+          border-radius: 0px 0px 40px 40px;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 30px;
+          margin-top: -80px;
+          height: 40px;
+        }
+        .card__content{
+          padding:0 0.5rem 0 1.5rem;
+        }
+        .card__content h3{
+          color: #838383;
+          font-size: 1rem;
+		  margin-bottom: 10px;
+        }
+        .card__content h5{
+          color: #f32028;
+          font-size: 1.8rem;
+		  margin-top: 10px;
+        }
+        .card__content p{
+          color: whitesmoke;
+          font-size: 0.8rem;
+        }
+        
+
+
+
+
+
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+#shopnow{
+	display: flex;
+}
+
+
+
+
+/* ----------------- media query start -----------------  */
+
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width:991px) {
+    .header-1,
+    .header-2 {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+	#shopnow {
+	flex-direction:column;
+	
+}
+#shopnow img{
+	width: 100%;
+}
+
+    #menu-bar {
+        display: initial;
+    }
+	.card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+
+    .header-2 .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f32028;
+        padding: 1rem 2rem;
+        display: none;
+    }
+    .header-2 .navbar.active {
+        display: initial;
+    }
+    .header-2 .navbar a {
+        font-size: 2.5rem;
+        display: block;
+        background: #fff;
+        text-align: center;
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+    .header-1 {
+        flex-flow: column;
+    }
+    .header-1 .search-box-container {
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .header-1 .logo {
+        font-size: 4rem;
+    }
+	
+}
+#overfold {
+           background-image:url('/shopimg/Service-and-Parts.png');
+           width: 100%;
+           height: 60vh;
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-position: center;
+           padding-top: 15rem;
+           color: white;
+           text-align: center;
+        }
 .container{
 	max-width: 1170px;
 	margin:auto;
@@ -94,36 +385,384 @@ ul{
     width: 100%;
 }
 }
-.cards {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
-	grid-template-rows: auto;
-	gap: 1rem;
-}
 
-.card {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	transition: all 0.2s ease-in-out 0.1s;
-}
 </style>
 <body>
+	<header>
+        <div class="header-1">
 
-    <div class="cards cards--two">
-        <div class="card">
-			<div class="card__inner">
-				<div class="card__pic">
-					<img src="https://images.unsplash.com/photo-1611265023526-707d240623af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+            <a href="" class="logo"><img src="/shopimg/SimbaCorp_logo.png" width="90px" alt=""></a>
+
+            <form action="" class="search-box-container">
+                <input type="search" id="search-box" placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+			<a href="" class="logo"><img src="/shopimg/mitsubishi-logo.png" width="150px" alt=""></a>
+
+        </div>
+
+
+        <div class="header-2">
+
+            <div id="menu-bar" ><img src="/landingimg/Humbg.png" alt=""></div>
+
+            <nav class="navbar">
+                <a href="#home">Car parts</a>
+                <a href="#home">Service parts</a>
+                <a href="#home">Tools</a>
+                <a href="#home">Engine parts </a>
+                <a href="#home">Lubricants & Fluids</a>
+				<a href="#home">Accessories</a>
+				<a href="#home">Batteries</a>
+            </nav>
+            <div class="icons">
+                <a href="#"><img src="shopimg/Group 11691.png" alt=""></a>
+                <a href="#" ><img src="shopimg/Group 11692.png" alt=""></a>
+                <a href="#" ><img src="shopimg/Group 11694.png" alt=""></a>
+            </div>
+        </div>
+
+
+		<div id="overfold">
+            <div id="herotext">
+              <div style="display: flex;padding-top: 60px;justify-content: space-between; margin: 0 2.5rem;">
+                <img src="landingimg/Previous Button.png" height="60px" alt="previous Button">
+				<div  style="background-color: rgba(0, 0, 0, 0.473);padding: 30px;margin-left: 300px;">
+					<h1 style="font-size: 3rem;text-align: start;" >AUTO PARTS</h1>
+					<p style="font-size: 1.5rem;word-spacing: 10px;">Genuine parts for your vehicles</p>
+
+
 				</div>
+                
+                <img src="landingimg/Next Button.png" height="60px" alt="next Button">
+
+              </div>
+                
+                
+                
+            </div>
+            
+        </div>
+    </header>
+
+	<!-- Latest products -->
+	<section>
+		<div class="cards-list">
+  
+            <div class="card 1">
+              <div class="card_image">
+				  <h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
+				   <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+              
+              <div class="card__content">
+                <h3>Accessories</h2>
+                
+                <h4>Specter Break Kit</h4>
+                
+                <h5>KES 7,500</h5>
+                
+              </div>
+            </div>
+            
+            
+            <div class="card 2">
+				<div class="card_image">
+					<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
 				<div class="card__content">
-					<h2>I'am a card!</h2>
-					<p>This is my content</p>
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 85,000
+				</h5>
+				  
 				</div>
-			</div>
-		</div>
-    </div>
+			  </div>
+              
+              <div class="card 3">
+				<div class="card_image">
+					<div style="display: flex;justify-content: space-between;font-weight: 200;">
+						<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
+						<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
+						
+					</div>
+					
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <div style="margin:10px 0;"><img src="/shopimg/Group 11817.png" width="40px" />
+					<img src="/shopimg/Group 11818.png" width="40px" />
+					<img src="/shopimg/Group 11819.png" width="40px" /> </div>
+				  
+				</div>
+			  </div>
+
+			  <div class="card 4">
+				<div class="card_image">
+					
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 70,000
+				</h5>
+				  
+				</div>
+			  </div>
+            
+            </div>
+
+	</section>
+
+	<!-- shop by category -->
+	<section></section>
+
+	
+
+
+
+
+<!-- advert b -->
+   <section>
+	<img src="/shopimg/adverts b.png" width="100%" style="padding: 50px;" alt="">
+
+   </section>
+   <section>
+	<img src="/shopimg/Group 12235.png" width="100%"  alt="">
+
+   </section>
+
+
+   <!-- Trending products-->
+	<section>
+		<div class="cards-list">
+  
+            <div class="card 1">
+              <div class="card_image">
+				  <h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
+				   <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+              
+              <div class="card__content">
+                <h3>Accessories</h2>
+                
+                <h4>Specter Break Kit</h4>
+                
+                <h5>KES 7,500</h5>
+                
+              </div>
+            </div>
+            
+            
+
+			  <div class="card 2">
+				<div class="card_image">
+					
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 8,000</h5>
+				  
+				</div>
+			  </div>
+
+			  <div class="card 3">
+				<div class="card_image">
+					
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 8,000</h5>
+				  
+				</div>
+			  </div>
+
+			  <div class="card 4">
+				<div class="card_image">
+					<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 10,000</h5>
+				  
+				</div>
+			  </div>
+            
+            </div>
+			<div class="cards-list">
+  
+				<div class="card 1">
+				  <div class="card_image">
+					  <h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
+					   <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				  
+				  <div class="card__content">
+					<h3>Accessories</h2>
+					
+					<h4>Specter Break Kit</h4>
+					
+					<h5>KES 7,500</h5>
+					
+				  </div>
+				</div>
+				
+				
+	
+				  <div class="card 2">
+					<div class="card_image">
+						
+						 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					
+					<div class="card__content">
+					  <h3>Accessories</h2>
+					  
+					  <h4>Specter Break Kit</h4>
+					  
+					  <h5>KES 8,000</h5>
+					  
+					</div>
+				  </div>
+	
+				  <div class="card 3">
+					<div class="card_image">
+						
+						 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					
+					<div class="card__content">
+					  <h3>Accessories</h2>
+					  
+					  <h4>Specter Break Kit</h4>
+					  
+					  <h5>KES 8,000</h5>
+					  
+					</div>
+				  </div>
+	
+				  <div class="card 4">
+					<div class="card_image">
+						<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
+						 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					
+					<div class="card__content">
+					  <h3>Accessories</h2>
+					  
+					  <h4>Specter Break Kit</h4>
+					  
+					  <h5>KES 10,000</h5>
+					  
+					</div>
+				  </div>
+				
+				</div>
+
+
+	</section>
+
+	<!-- more adverts -->
+	<section id="shopnow">
+		<img src="/shopimg/Group 11588.png" width="50%" style="padding: 50px;" alt="">
+		<img src="/shopimg/Group 11589.png" width="50%" style="padding: 50px;" alt="">
+
+	</section>
+
+	<!-- Featured Products -->
+	<section>
+		<div class="cards-list">
+  
+            <div class="card 1">
+              <div class="card_image">
+				  <h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
+				   <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+              
+              <div class="card__content">
+                <h3>Accessories</h2>
+                
+                <h4>Specter Break Kit</h4>
+                
+                <h5>KES 7,500</h5>
+                
+              </div>
+            </div>
+            
+            
+
+			  <div class="card 2">
+				<div class="card_image">
+					
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 8,000</h5>
+				  
+				</div>
+			  </div>
+
+			  <div class="card 3">
+				<div class="card_image">
+					
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 8,000</h5>
+				  
+				</div>
+			  </div>
+
+			  <div class="card 4">
+				<div class="card_image">
+					<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
+					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				
+				<div class="card__content">
+				  <h3>Accessories</h2>
+				  
+				  <h4>Specter Break Kit</h4>
+				  
+				  <h5>KES 10,000</h5>
+				  
+				</div>
+			  </div>
+            
+            </div>
+			
+
+
+	</section>
+
+	<!-- subscription section -->
+	<section></section>
+
+	<!-- Top rated Products -->
+	<section></section>
 
 
 
@@ -131,35 +770,54 @@ ul{
         <div class="container">
             <div class="row">
                 <div class="footer-col">
-                    <h4>company</h4>
+                    <h4>Contact Us</h4>
                     <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
+                        <li>
+                            <a href="#">PHONE NUMBER<br>(+254) 703 046 000 </a>
+                        </li>
+                        <li>
+                          <a href="#">EMAIL ADDRESS<br>Simbacares@simbacorp.com</a>
+                         
+                        </li>
+                        <li>
+                          <a href="#">OUR LOCATION<br>Mombasa Road, Opp. Panari Hotel, Nairobi</a>
+                          
+                        </li>
+                        <li>
+                          <a href="#">WORKING HOURS<br>Mon-Sat 8:00 am - 5:00 pm</a>
+                          
+                        </li>
+                        
                     </ul>
                 </div>
+                
                 <div class="footer-col">
-                    <h4>get help</h4>
+                    <h4>Customer Services</h4>
                     <ul>
+                      <li><a href="#">Fit it For Me </a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">Store Locator</a></li>
+                      <li><a href="#">Delivery Information</a></li>
+                      <li><a href="#">Returns & Refunds</a></li>
+                      <li><a href="#">Product Recall</a></li>
+                      
+                    </ul>
+                </div>
+				<div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+						<li><a href="#">Terms & Conditions </a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
+						<li><a href="#">Store Locator</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>online shop</h4>
+                    <h4>Information</h4>
                     <ul>
-                        <li><a href="#">watch</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+						<li><a href="#">Terms & Conditions </a></li>
+                        <li><a href="#">FAQ</a></li>
+						<li><a href="#">Store Locator</a></li>
                     </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>follow us</h4>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
