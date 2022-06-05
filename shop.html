@@ -277,6 +277,11 @@ html {
 }
 
 @media (max-width:991px) {
+  .carousel {
+ 
+ margin-left: 0.2rem;
+  
+}
     .header-1,
     .header-2 {
         padding: 2rem;
@@ -428,14 +433,15 @@ ul{
 
 /* carousel styles */
 .wrapper {
- 
-  margin:auto;
+
   height: fit-content;
+
 }
 
 .carousel {
   overflow: auto;
   display: flex;
+ margin-left: 8rem;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 60px;
   
@@ -698,16 +704,32 @@ cursor: pointer;
     </div>
     <div class="wrapper">
       <div class="carousel">
-        <div >
+        <div style="display: flex;flex-direction:column;">
           <img src="/shopimg/Body parts.png" class="item first"  alt="">
-          <p>Body Parts</p>
+          <p style="color:#fff ;text-align: center;margin-top: 2rem;font-size: 2rem;">Body Parts</p>
+
+        </div>
+        <div style="display: flex;flex-direction:column;">
+          <img src="/shopimg/pic-1-600x600.png" class="item"  alt="">
+          <p style="color:#fff ;text-align: center;margin-top: 2rem;font-size: 2rem;">Tools & Garage</p>
+
+        </div>
+        <div style="display: flex;flex-direction:column;">
+          <img src="/shopimg/brakes.png" class="item"  alt="">
+          <p style="color:#fff ;text-align: center;margin-top: 2rem;font-size: 2rem;">Brakes & Suspension</p>
+
+        </div>
+        <div style="display: flex;flex-direction:column;">
+          <img src="/shopimg/engine.png" class="item"  alt="">
+          <p style="color:#fff ;text-align: center;margin-top: 2rem;font-size: 2rem;">Engine & Drivetrain</p>
+
+        </div>
+        <div style="display: flex;flex-direction:column;">
+          <img src="/shopimg/BRAKE KIT.png" class="item last" alt="">
+          <p style="color:#fff ;text-align: center;margin-top: 2rem;font-size: 2rem;">Brakes</p>
 
         </div>
         
-        <img src="/shopimg/pic-1-600x600.png" class="item" alt="">
-        <img src="/shopimg/brakes.png" class="item" alt="">
-        <img src="/shopimg/engine.png" class="item" alt="">
-        <img src="/shopimg/BRAKE KIT.png" class="item last" alt="">
         
       </div>
     </div>
