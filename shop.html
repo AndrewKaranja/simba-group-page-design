@@ -2,8 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SHOP</title>
 </head>
 <style>
     *{
@@ -11,13 +12,16 @@
 	padding:0;
 	box-sizing: border-box;
 }
+body {
+  font-family: Arial, sans-serif;
+}
 :root {
-    --red: #f32028;
+    --red: #8b1317;
     --white: #fff;
 }
 
 ::selection {
-    background: #f32028;
+    background: #8b1317;
     color: #fff;
 }
 
@@ -47,25 +51,33 @@ html {
     padding: .5rem;
 }
 
-.header-1 .search-box-container {
+.search-box-container {
     display: flex;
-    height: 5rem;
+    height: fit-content;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    background-color: white;
+    border-radius: 4px;
 }
 
-.header-1 .search-box-container #search-box {
+.search-box-container #search-box {
     height: 100%;
     width: 100%;
     padding: 1rem;
-    border: .1rem solid rgba(0, 0, 0, .3);
+    margin: 0.3rem;
+    border: none;
+    
     color: #333;
     font-size: 2rem;
     text-transform: none;
 }
 
-.header-1 .search-box-container label {
-    width: 8rem;
+.search-box-container label {
+  border-radius: 4px;
+    width: fit-content;
+    padding: 0 2rem;
     height: 100%;
-    background-color: #f32028;
+    margin: 0.3rem;
+    background-color: #8b1317;
     font-size: 2.5rem;
     line-height: 5rem;
     color: #fff;
@@ -73,7 +85,7 @@ html {
     text-align: center;
 }
 
-.header-1 .search-box-container label:hover {
+.search-box-container label:hover {
     background-color: #000;
 }
 
@@ -83,7 +95,7 @@ html {
     justify-content: space-between;
     padding: 2rem 9%;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
-    background-color: #f32028;
+    background-color: #8b1317;
     position: relative;
 }
 
@@ -99,14 +111,15 @@ html {
 
 .header-2 .navbar a {
     padding: .5rem 1.5rem;
-    font-size: 2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
     color: #fff;
     border-radius: .5rem;
 }
 
 .header-2 .navbar a:hover {
     color: #fff;
-    background-color: #f32028;
+   
 }
 
 .header-2 .icons a {
@@ -131,6 +144,14 @@ html {
 #menu-bar img{
 	width: 30px;
 }
+.titles{
+  margin:40px 70px 0 70px;
+  font-size: 1.5rem;
+  color: #4b4b4b;
+  
+}
+
+/* card styles */
 .cards-list {
               z-index: 0;
               width: 100%;
@@ -145,26 +166,29 @@ html {
             
             
             color: black;
-            height: 280px;
+            height: 320px;
             
             
-            box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+            box-shadow: 1px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
             cursor: pointer;
             transition: 0.4s;
         }
         .card .card_image {
             width: inherit;
             height: 200px;
+            position: relative;
             border-radius: 40px;
         }
         .card .card_image img {
           width: inherit;
           height: inherit;
-		  padding: 20px;
+		     position: absolute;
+         z-index: -10;
+         padding: 1rem;
+         top: 0;
           background-color: white;
-          border-top-left-radius: 40px;
-          border-top-right-radius: 40px;
-          object-fit: cover;
+          
+          object-fit:contain;
         }
         .card .card_title {
           text-align: center;
@@ -177,11 +201,17 @@ html {
         }
         .card__content{
           padding:0 0.5rem 0 1.5rem;
+          
         }
         .card__content h3{
           color: #838383;
-          font-size: 1rem;
+          font-size: 1.3rem;
 		  margin-bottom: 10px;
+        }
+        .card__content h4{
+          
+          font-size: 1.5rem;
+		  
         }
         .card__content h5{
           color: #f32028;
@@ -217,6 +247,24 @@ html {
 	display: flex;
 }
 
+.cardfeatured{
+  display: flex;
+  margin: 30px;
+}
+.cardfeatured img{
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+}
+
+.vl {
+  border-left: 2px solid white;
+  height: inherit;
+  margin: 30px 0;
+}
+#deal{
+  display: flex;
+}
 
 
 
@@ -236,6 +284,20 @@ html {
 }
 
 @media (max-width:768px) {
+  #deal{
+      display: block;
+    }
+ 
+  .topratedlist{
+          
+          flex-direction: column;
+          margin: 0;
+        }
+        .vl{
+          height: 1px;
+          margin: 0;
+        
+        }
 	#shopnow {
 	flex-direction:column;
 	
@@ -257,7 +319,7 @@ html {
         top: 100%;
         left: 0;
         right: 0;
-        background: #f32028;
+        background: #8b1317;
         padding: 1rem 2rem;
         display: none;
     }
@@ -278,6 +340,7 @@ html {
     html {
         font-size: 50%;
     }
+    
     .header-1 {
         flex-flow: column;
     }
@@ -290,21 +353,70 @@ html {
     }
 	
 }
+/* above the fold styles */
 #overfold {
            background-image:url('/shopimg/Service-and-Parts.png');
            width: 100%;
-           height: 60vh;
+           height: 600px;
            background-size: cover;
            background-repeat: no-repeat;
-           background-attachment: fixed;
+           
            background-position: center;
            padding-top: 15rem;
            color: white;
            text-align: center;
         }
+        #toprated {
+           background-image:url('shopimg/lancer.png');
+           width: 100%;
+           height: fit-content;
+           
+           background-size: cover;
+           background-repeat: no-repeat;
+           
+           background-position: center;
+          
+           color: white;
+           text-align: center;
+        }
+        #subscribe {
+           /* background-image:url('/shopimg/wheel.png'); */
+           width: 100%;
+           height: fit-content;
+/*            
+           background-size: cover;
+           background-repeat: no-repeat;
+           
+           background-position: center; */
+          
+           color: white;
+           text-align: center;
+        }
+        .topratedlist{
+          display: flex;
+          justify-content:space-between;
+          margin:0 70px;
+          
+        }
+
+.mininav h1{
+  
+  padding: 10px;
+  cursor: pointer;
+  
+
+}
+.mininav h1:hover{
+  border-bottom: 3px solid #f32028;
+  padding-bottom: 12px;
+  cursor: pointer;
+
+}
 .container{
-	max-width: 1170px;
+  background-color: #000000f3;
+  width: 100%;
 	margin:auto;
+  padding: 70px 40px;
 }
 .row{
 	display: flex;
@@ -313,9 +425,57 @@ html {
 ul{
 	list-style: none;
 }
+
+/* carousel styles */
+.wrapper {
+ 
+  margin:auto;
+  height: fit-content;
+}
+
+.carousel {
+  overflow: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 60px;
+  
+  
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+.item {
+  height: 206px;
+  width: 230px;
+  background-color: white;
+ 
+  border-radius: 3px;
+  margin-right: 25px;
+  padding: 1rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.first {
+  margin-left: auto;
+  padding: 1rem;
+  background-color: white;
+}
+
+.last {
+  margin-right: auto;
+}
+
+/* Footer styles */
 .footer{
-	background-color: #24262b;
-    padding: 70px 0;
+  background-image:url('shopimg/airtrek.png');
+  background-size: cover;
+  
+	
 }
 .footer-col{
    width: 25%;
@@ -334,7 +494,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #f32028;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -360,8 +520,8 @@ ul{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
+	
+	margin:10px 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
@@ -369,8 +529,7 @@ ul{
 	transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
+cursor: pointer;
 }
 
 /*responsive*/
@@ -391,14 +550,14 @@ ul{
 	<header>
         <div class="header-1">
 
-            <a href="" class="logo"><img src="/shopimg/SimbaCorp_logo.png" width="90px" alt=""></a>
+            <a href="/mitsubishi-landing.html" class="logo"><img src="/shopimg/SimbaCorp_logo.png" width="150px" alt=""></a>
 
             <form action="" class="search-box-container">
-                <input type="search" id="search-box" placeholder="search here...">
-                <label for="search-box" class="fas fa-search"></label>
+                <input type="search" id="search-box" placeholder="Search keyword, category, brand or part">
+                <label for="search-box" ><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="50"viewBox="0 0 30 30" style=" fill:white;"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"></path></svg></label>
             </form>
 
-			<a href="" class="logo"><img src="/shopimg/mitsubishi-logo.png" width="150px" alt=""></a>
+			<a href="" class="logo"><img src="/shopimg/mitsubishi-logo.png" width="200px" alt=""></a>
 
         </div>
 
@@ -408,13 +567,13 @@ ul{
             <div id="menu-bar" ><img src="/landingimg/Humbg.png" alt=""></div>
 
             <nav class="navbar">
-                <a href="#home">Car parts</a>
-                <a href="#home">Service parts</a>
-                <a href="#home">Tools</a>
-                <a href="#home">Engine parts </a>
-                <a href="#home">Lubricants & Fluids</a>
-				<a href="#home">Accessories</a>
-				<a href="#home">Batteries</a>
+                <a href="#">Car parts</a>
+                <a href="#">Service parts</a>
+                <a href="#">Tools</a>
+                <a href="#">Engine parts </a>
+                <a href="#">Lubricants & Fluids</a>
+				<a href="#">Accessories</a>
+				<a href="#">Batteries</a>
             </nav>
             <div class="icons">
                 <a href="#"><img src="shopimg/Group 11691.png" alt=""></a>
@@ -430,7 +589,7 @@ ul{
                 <img src="landingimg/Previous Button.png" height="60px" alt="previous Button">
 				<div  style="background-color: rgba(0, 0, 0, 0.473);padding: 30px;margin-left: 300px;">
 					<h1 style="font-size: 3rem;text-align: start;" >AUTO PARTS</h1>
-					<p style="font-size: 1.5rem;word-spacing: 10px;">Genuine parts for your vehicles</p>
+					<p style="font-size: 2.5rem;word-spacing: 10px;">Genuine parts for your vehicles</p>
 
 
 				</div>
@@ -448,6 +607,14 @@ ul{
 
 	<!-- Latest products -->
 	<section>
+    <div style="margin:40px 70px 0 70px;font-size: 1.5rem;color: #4b4b4b;display: flex;justify-content: space-between;border-bottom:2px solid #4b4b4b;">
+      <h1 style="margin-top: 10px;">Latest Products</h1>
+      <div class="mininav" style="display: flex;">
+        <h1 >All</h1>
+        <h1 >New products</h1>
+        <h1 >Top selling</h1>
+      </div>
+    </div>
 		<div class="cards-list">
   
             <div class="card 1">
@@ -469,7 +636,7 @@ ul{
             <div class="card 2">
 				<div class="card_image">
 					<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/tools.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -490,7 +657,7 @@ ul{
 						
 					</div>
 					
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/STP GENERATOR PLATINUM.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -507,7 +674,7 @@ ul{
 			  <div class="card 4">
 				<div class="card_image">
 					
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/SP033813.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -525,7 +692,26 @@ ul{
 	</section>
 
 	<!-- shop by category -->
-	<section></section>
+	<section style="background-image: linear-gradient(black, rgb(59, 59, 59), black);;padding:20px;">
+    <div  style="padding-top: 20px;border-bottom: 2px solid var(--red);margin-bottom: 20px;padding-bottom: 20px;">
+      <h1 style="text-align: start;color:white;font-size: large;">Shop by category</h1>
+    </div>
+    <div class="wrapper">
+      <div class="carousel">
+        <div >
+          <img src="/shopimg/Body parts.png" class="item first"  alt="">
+          <p>Body Parts</p>
+
+        </div>
+        
+        <img src="/shopimg/pic-1-600x600.png" class="item" alt="">
+        <img src="/shopimg/brakes.png" class="item" alt="">
+        <img src="/shopimg/engine.png" class="item" alt="">
+        <img src="/shopimg/BRAKE KIT.png" class="item last" alt="">
+        
+      </div>
+    </div>
+  </section>
 
 	
 
@@ -545,12 +731,16 @@ ul{
 
    <!-- Trending products-->
 	<section>
+    <div class="titles">
+      <h1>Trending Products</h1>
+      <hr style="width: 100%;">
+    </div>
 		<div class="cards-list">
   
             <div class="card 1">
               <div class="card_image">
 				  <h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
-				   <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+				   <img src="/shopimg/pic-32-600x600.png" /> </div>
               
               <div class="card__content">
                 <h3>Accessories</h2>
@@ -567,7 +757,7 @@ ul{
 			  <div class="card 2">
 				<div class="card_image">
 					
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/prod_2_deposit_opt-600x600.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -582,7 +772,7 @@ ul{
 			  <div class="card 3">
 				<div class="card_image">
 					
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/interior parts.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -597,7 +787,7 @@ ul{
 			  <div class="card 4">
 				<div class="card_image">
 					<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/pic-20-400x400.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -612,10 +802,10 @@ ul{
             </div>
 			<div class="cards-list">
   
-				<div class="card 1">
+				<div class="card 5">
 				  <div class="card_image">
 					  <h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">SALE</h4>
-					   <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					   <img src="/shopimg/BRAKE KIT.png" /> </div>
 				  
 				  <div class="card__content">
 					<h3>Accessories</h2>
@@ -629,10 +819,10 @@ ul{
 				
 				
 	
-				  <div class="card 2">
+				  <div class="card 6">
 					<div class="card_image">
 						
-						 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+						 <img src="/shopimg/pic-1-600x600.png" /> </div>
 					
 					<div class="card__content">
 					  <h3>Accessories</h2>
@@ -644,10 +834,10 @@ ul{
 					</div>
 				  </div>
 	
-				  <div class="card 3">
+				  <div class="card 7">
 					<div class="card_image">
 						
-						 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+						 <img src="/shopimg/BRANDIX CAR DOOR LOCK.png" /> </div>
 					
 					<div class="card__content">
 					  <h3>Accessories</h2>
@@ -659,10 +849,10 @@ ul{
 					</div>
 				  </div>
 	
-				  <div class="card 4">
+				  <div class="card 8">
 					<div class="card_image">
 						<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
-						 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+						 <img src="/shopimg/engine.png" /> </div>
 					
 					<div class="card__content">
 					  <h3>Accessories</h2>
@@ -688,6 +878,10 @@ ul{
 
 	<!-- Featured Products -->
 	<section>
+    <div class="titles">
+      <h1>Featured Products</h1>
+      <hr style="width: 100%;">
+    </div>
 		<div class="cards-list">
   
             <div class="card 1">
@@ -710,7 +904,7 @@ ul{
 			  <div class="card 2">
 				<div class="card_image">
 					
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/SIDE REARVIEW MIRROR.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -725,7 +919,7 @@ ul{
 			  <div class="card 3">
 				<div class="card_image">
 					
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/interior parts.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -740,7 +934,7 @@ ul{
 			  <div class="card 4">
 				<div class="card_image">
 					<h2 style="background-color: #f32028;width: fit-content;color: white;margin: 5px;padding: 3px;">NEW</h4>
-					 <img src="/shopimg/SPECTER BRAKE IT.png" /> </div>
+					 <img src="/shopimg/tools.png" /> </div>
 				
 				<div class="card__content">
 				  <h3>Accessories</h2>
@@ -759,10 +953,199 @@ ul{
 	</section>
 
 	<!-- subscription section -->
-	<section></section>
+	<section id="subscribe">
+    <img src="/shopimg/wheel.png" style="position:absolute ;width: 100%;height: 50%;left: 0;z-index: -10;filter: brightness(50%);" alt="">
+   <div>
+    <div style="padding: 50px 0;">
+      <h1 style="color: #fff;font-size: 2.5rem;font-weight: 500;">Subscribe to our Newsletter</h1>
+      <p style="color: #fff;font-size: 1.4rem;">Be the first to receive exclusive promotions, updates and product announcements.
+        Subscribe to our mailing list now!</p>
+        <p style="color: #fff;font-size: 1.4rem;padding-bottom: 20px;">Subscribe to our mailing list now!</p>
+        <form action="" class="search-box-container" style="margin: 0 250px;">
+          <input type="search" id="search-box" placeholder="Your Email">
+          <label for="search-box" >Subscribe</label>
+      </form>
+    </div>
+    <div id="deal" style="background-color: white;margin:0 auto;width: fit-content;">
+      <img src="/shopimg/Group 12352.png" width="400px" height="400px" alt="">
+      <div style="margin: 80px;">
+        <h2 style="color: rgb(53, 53, 53);font-size: 2rem;font-weight: 600;text-align: start;">DEAL OF THE DAY</h2>
+        <h1 style="color: #000;font-size: 4rem;font-weight: 900;text-align: start;">Inch spiked tyres</h1>
+        <div style="display: flex;margin:10px 0;">
+          <p style="color: #f32028;font-weight: 600;font-size: x-large; margin-right: 10px;">KES 95,000</p>
+          <p style="color: #313131;font-weight: 600;font-size: large;text-align: end;margin-right: 10px;"><s>KES 100,000</s></p>
+          <p style="color: #414141;font-weight: 600;font-size: x-large;text-align: center;">20%</p>
+        </div>
+        <div style="display: flex;border:2px solid rgb(49, 49, 49);width: fit-content;margin: 30px 0;">
+          <div style="padding: 5px 10px;">
+            <p style="color: #000;font-size: large;font-weight: 600;">20</p>
+            <p style="color: #b3b3b3;font-size: medium;">days</p>
+          </div>
+          <div style="padding: 5px 10px;">
+            <p style="color: #000;font-size: large;font-weight: 600;">13</p>
+            <p style="color: #b3b3b3;font-size: medium;">hours</p>
+          </div>
+          <div style="padding: 5px 10px;">
+            <p style="color: #000;font-size: large;font-weight: 600;">40</p>
+            <p style="color: #b3b3b3;font-size: medium;">mins</p>
+          </div>
+          <div style="padding: 5px 10px;">
+            <p style="color: #f32028;font-weight: 600;font-size: large;">10</p>
+            <p style="color: #b3b3b3;font-size: medium;">secs</p>
+          </div>
+        </div>
+        <div style="text-align: start;">
+          <button style="background-color: #f32028;color: white;padding: 10px;border-radius: 4px;border: none;width: 150px;">Add to cart</button>
+        </div>
+        
+
+      </div>
+    </div>
+
+   </div>
+    
+
+  </section>
 
 	<!-- Top rated Products -->
-	<section></section>
+	<section id="toprated">
+    <div style="background-color: #640c0fe8;height: inherit;">
+      <div class="titles"  style="padding-top: 30px;">
+        <h1 style="text-align: start;color:white;font-size: large;">Top Rated Products</h1>
+        <hr style="width: 100%;">
+      </div>
+      <div class="topratedlist">
+
+        <div >
+          <div class="cardfeatured">
+            <img src="/shopimg/pic-3.png" /> 
+               
+               <div class="card__content" style="padding-top:60px;">
+                 
+                 <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                 
+                 <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                 
+               </div>
+             </div>
+             <hr style="width: 100%;">
+             <div class="cardfeatured">
+              <img src="/shopimg/prod_-1.png" /> 
+                 
+                 <div class="card__content" style="padding-top:60px">
+                   
+                   <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                   
+                   <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                   
+                 </div>
+               </div>
+               <hr style="width: 100%;">
+               <div class="cardfeatured">
+                <img src="/shopimg/Repair-Parts-41-600x600.png" /> 
+                   
+                   <div class="card__content" style="padding-top:60px">
+                     
+                     <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                     
+                     <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                     
+                   </div>
+                 </div>
+                
+
+        </div>
+        <div class="vl"></div>
+
+        <div>
+          <div class="cardfeatured">
+            <img src="/shopimg/SP-1.png" /> 
+               
+               <div class="card__content" style="padding-top:60px">
+                 
+                 <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                 
+                 <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                 
+               </div>
+             </div>
+             <hr style="width: 100%;">
+             <div class="cardfeatured">
+              <img src="/shopimg/tools-1.png" /> 
+                 
+                 <div class="card__content" style="padding-top:60px">
+                   
+                   <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                   
+                   <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                   
+                 </div>
+               </div>
+               <hr style="width: 100%;">
+               <div class="cardfeatured">
+                <img src="/shopimg/SP-1.png" /> 
+                   
+                   <div class="card__content" style="padding-top:60px">
+                     
+                     <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                     
+                     <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                     
+                   </div>
+                 </div>
+                
+
+        </div>
+        <div class="vl"></div>
+
+        <div>
+          <div class="cardfeatured">
+            <img src="/shopimg/pic-4.png" /> 
+               
+               <div class="card__content" style="padding-top:60px">
+                 
+                 <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                 
+                 <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                 
+               </div>
+             </div>
+             <hr style="width: 100%;">
+             <div class="cardfeatured">
+              <img src="/shopimg/e-p-6-1-600x600.png" /> 
+                 
+                 <div class="card__content" style="padding-top:60px">
+                   
+                   <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                   
+                   <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                   
+                 </div>
+               </div>
+               <hr style="width: 100%;">
+               <div class="cardfeatured">
+                <img src="/shopimg/pic-1.png" /> 
+                   
+                   <div class="card__content" style="padding-top:60px">
+                     
+                     <h4 style="font-size: 1rem;">BRANDIX CAR DOOR LOCK</h4>
+                     
+                     <h5 style="color: #b10006;text-align: start;">KES 23,000</h5>
+                     
+                   </div>
+                 </div>
+                
+
+        </div>
+  
+          
+              
+              </div>
+
+      
+    </div>
+    
+  </section>
 
 
 
@@ -819,15 +1202,27 @@ ul{
 						<li><a href="#">Store Locator</a></li>
                     </ul>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                          width="30" height="30"
+                          viewBox="0 0 50 50"
+                          style=" fill:white;"><path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 30.693359 14.058594 C 27.093054 14.058594 24.152344 16.998175 24.152344 20.597656 C 24.152344 20.622956 24.159856 20.646615 24.160156 20.671875 C 20.346071 20.164308 16.972078 18.281343 14.654297 15.439453 A 1.0001 1.0001 0 0 0 13.015625 15.568359 C 12.452734 16.536013 12.130859 17.663768 12.130859 18.857422 C 12.130859 19.919597 12.426761 20.906321 12.878906 21.796875 A 1.0001 1.0001 0 0 0 12.085938 22.773438 L 12.085938 22.84375 C 12.085938 24.777783 12.990963 26.452789 14.332031 27.652344 A 1.0001 1.0001 0 0 0 14.072266 28.677734 C 14.630704 30.41466 15.93241 31.774479 17.5625 32.541016 C 16.258408 33.150994 14.861087 33.587891 13.320312 33.587891 C 12.909515 33.587891 12.510187 33.564538 12.119141 33.517578 A 1.0001 1.0001 0 0 0 11.460938 35.353516 C 14.065405 37.024617 17.166795 38 20.490234 38 C 25.860882 38 30.105907 35.743874 32.943359 32.525391 C 35.780812 29.306907 37.253906 25.153083 37.253906 21.240234 C 37.253906 21.122724 37.248494 21.01029 37.246094 20.894531 C 38.219933 20.11274 39.135827 19.250444 39.830078 18.210938 A 1.0001 1.0001 0 0 0 38.705078 16.699219 C 38.866705 16.38464 39.095491 16.111528 39.205078 15.769531 A 1.0001 1.0001 0 0 0 37.744141 14.603516 C 36.869551 15.121731 35.886845 15.463383 34.869141 15.701172 C 33.725772 14.727018 32.30529 14.058594 30.693359 14.058594 z M 30.693359 16.058594 C 32.005547 16.058594 33.178321 16.606981 34.005859 17.490234 A 1.0001 1.0001 0 0 0 34.927734 17.789062 C 35.079649 17.759183 35.201682 17.662443 35.351562 17.626953 C 35.332963 17.638463 35.321514 17.658672 35.302734 17.669922 A 1.0001 1.0001 0 0 0 35.832031 19.527344 C 35.763341 19.579724 35.722335 19.662323 35.652344 19.712891 A 1.0001 1.0001 0 0 0 35.238281 20.566406 C 35.247781 20.79066 35.253906 21.015832 35.253906 21.240234 C 35.253906 24.645385 33.939657 28.371609 31.443359 31.203125 C 28.947059 34.03464 25.308587 36 20.490234 36 C 18.837046 36 17.2817 35.669687 15.800781 35.167969 C 17.643043 34.77762 19.387244 34.125203 20.816406 33.003906 A 1.0001 1.0001 0 0 0 20.21875 31.21875 C 18.803099 31.19304 17.712807 30.392345 16.898438 29.359375 C 17.197615 29.320665 17.507049 29.319275 17.792969 29.240234 A 1.0001 1.0001 0 0 0 17.724609 27.294922 C 16.073199 26.96164 14.784996 25.723029 14.3125 24.121094 C 14.7378 24.223448 15.110445 24.452375 15.5625 24.466797 A 1.0001 1.0001 0 0 0 16.150391 22.636719 C 14.930654 21.821102 14.130859 20.439709 14.130859 18.857422 C 14.130859 18.530423 14.306329 18.270522 14.371094 17.964844 C 17.211591 20.776703 20.99183 22.6429 25.248047 22.857422 A 1.0001 1.0001 0 0 0 26.271484 21.628906 C 26.193654 21.29976 26.152344 20.956387 26.152344 20.597656 C 26.152344 18.079138 28.173664 16.058594 30.693359 16.058594 z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                          width="30" height="30"
+                          viewBox="0 0 50 50"
+                          style=" fill:white;"><path d="M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z"></path></svg></i></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                          width="30" height="30"
+                          viewBox="0 0 50 50"
+                          style=" fill:white;"><path fill-rule="evenodd" d="M 13 5 L 16 14 L 16 20 L 18 20 L 18 14 L 21 5 L 19 5 L 17 11 L 15 5 Z M 24 9 C 22.933594 9 22.410156 9.167969 21.757813 9.703125 C 21.132813 10.230469 20.960938 10.636719 21 12 L 21 17 C 21 17.996094 21.164063 18.652344 21.765625 19.234375 C 22.390625 19.816406 22.980469 20 24 20 C 25.066406 20 25.648438 19.816406 26.25 19.234375 C 26.875 18.675781 27 17.996094 27 17 L 27 12 C 27 11.117188 26.84375 10.28125 26.238281 9.722656 C 25.613281 9.148438 24.96875 9 24 9 Z M 29 9 L 29 18 C 29 18.972656 29.980469 20 31 20 C 32.019531 20 32.558594 19.488281 33 19 L 33 20 L 35 20 L 35 9 L 33 9 L 33 17 C 32.988281 17.683594 32.183594 18 32 18 C 31.792969 18 31 17.957031 31 17 L 31 9 Z M 24 11 C 24.300781 11 25 10.996094 25 12 L 25 17 C 25 17.96875 24.324219 18 24 18 C 23.699219 18 23 17.988281 23 17 L 23 12 C 23 11.183594 23.433594 11 24 11 Z M 10 22 C 6.40625 22 4 24.382813 4 28 L 4 37.5 C 4 41.117188 6.40625 44 10 44 L 40 44 C 43.59375 44 46 41.617188 46 38 L 46 28 C 46 24.382813 43.59375 22 40 22 Z M 12 26 L 18 26 L 18 28 L 16 28 L 16 40 L 14 40 L 14 28 L 12 28 Z M 26 26 L 28 26 L 28 30 C 28.230469 29.640625 28.574219 29.355469 28.902344 29.195313 C 29.222656 29.03125 29.546875 28.9375 29.875 28.9375 C 30.523438 28.9375 31.03125 29.171875 31.378906 29.609375 C 31.726563 30.050781 32 30.636719 32 31.5 L 32 37.5 C 32 38.242188 31.75 38.703125 31.421875 39.097656 C 31.101563 39.492188 30.621094 39.992188 30 40 C 28.949219 40.011719 28.386719 39.449219 28 39 L 28 40 L 26 40 Z M 18 29 L 20 29 L 20 37 C 20 37.230469 20.269531 38.007813 21 38 C 21.8125 37.992188 21.820313 37.234375 22 37 L 22 29 L 24 29 L 24 40 L 22 40 L 22 39 C 21.628906 39.4375 21.4375 39.574219 21.019531 39.78125 C 20.605469 40.015625 20.183594 40 19.792969 40 C 19.308594 40 18.757813 39.5625 18.5 39.234375 C 18.269531 38.933594 18 38.625 18 38 Z M 36.199219 29 C 37.148438 29 37.816406 29.203125 38.320313 29.734375 C 38.835938 30.265625 39 30.886719 39 31.886719 L 39 35 L 35 35 L 35 36.546875 C 35 37.105469 35.074219 37.460938 35.21875 37.671875 C 35.355469 37.902344 35.632813 38.003906 36 38 C 36.40625 37.996094 36.664063 37.914063 36.800781 37.730469 C 36.941406 37.566406 37 37.101563 37 36.5 L 37 36 L 39 36 L 39 36.59375 C 39 37.683594 38.914063 38.496094 38.375 39.027344 C 37.867188 39.585938 37.074219 39.84375 36.035156 39.84375 C 35.085938 39.84375 34.34375 39.5625 33.8125 38.984375 C 33.28125 38.40625 33.003906 37.613281 33.003906 36.59375 L 33.003906 31.886719 C 33.003906 30.980469 33.320313 30.308594 33.902344 29.710938 C 34.371094 29.230469 35.25 29 36.199219 29 Z M 29 30.5 C 28.449219 30.5 28.007813 30.996094 28 31.5 L 28 37.5 C 28.007813 37.789063 28.449219 38 29 38 C 29.550781 38 30 37.574219 30 37.023438 L 30 32 C 30 31 29.550781 30.5 29 30.5 Z M 36 31 C 35.449219 31 35.007813 31.464844 35 32 L 35 33 L 37 33 L 37 32 C 37 31.386719 36.550781 31 36 31 Z"></path></svg></i></a>
                     </div>
                 </div>
             </div>
         </div>
+        
    </footer>
+   <div style="background-color: var(--red);bottom: 0;display: block;text-align: center;color: white;">
+    <p style="padding:20px 0;font-size: medium;">© 2021 ® All rights reserved</p>
+  </div>
     
 </body>
 </html>
